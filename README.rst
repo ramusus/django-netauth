@@ -4,6 +4,8 @@ django-netauth
 **Django netauth** is django application that allows authenticate users through OpenID/OAuth/Google/Twitter/Facebook/Vkontakte.
 Example project deployed on http://netauth.node42.org/
 
+**Sorry django-netauth not nore supported now. Im recomended use django-socialauth.**
+
 .. contents::
 
 Requirements
@@ -149,5 +151,5 @@ Licensed under a `GNU lesser general public license`_.
 
 .. _GNU lesser general public license: http://www.gnu.org/copyleft/lesser.html
 .. _messages-framework: http://docs.djangoproject.com/en/dev/ref/contrib/messages/#ref-contrib-messages
-.. _klen: https://github.com/klen
+.. _klen: https://klen.github.com
 .. _ilblackdragon: https://github.com/ilblackdragon
