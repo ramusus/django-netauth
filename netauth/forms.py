@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext as _
 
 from netauth import settings
@@ -12,13 +12,13 @@ class ExtraForm(forms.Form):
 
     def clean_username(self):
         try:
-            User.objects.get( username = self.cleaned_data[ 'username' ] )
+            get_user_model().objects.get( username = self.cleaned_data[ 'username' ] )
             raise forms.ValidationError(_(u'This username name is already taken'))
-        except User.DoesNotExist:
+        except get_user_model().DoesNotExist:
             return self.cleaned_data['username']
 
     def save(self, request, identity, provider):
-        user = User.objects.create(username=self.cleaned_data['username'])
+        user = get_user_model().objects.create(username=self.cleaned_data['username'])
         if settings.ACTIVATION_REQUIRED:
             user.is_active = False
         user.save()
