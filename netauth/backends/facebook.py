@@ -1,5 +1,8 @@
 from django.shortcuts import redirect
-from django.utils import simplejson
+try:
+    from django.utils import simplejson
+except ImportError:
+    import simplejson
 
 from netauth import settings
 from netauth.backends import OAuthBaseBackend
